@@ -12,9 +12,10 @@
     --primary-bg: #fff;
 }
 body {
-    background-color: var(--primary-bg); /* cor do fundo */
+    background: var(--primary-bg); /* cor do fundo */
  color: var(--primary-color);
  font-family: Verdana, Geneva, Tahoma, sans-serif ;
+ font-size: 20px;
  
    a{
     text-decoration: none;
@@ -35,6 +36,7 @@ i{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none; /* remove ou altera caracteristicas da lista, tais como bolinha, nu´meros, etc. */
 /* fim do reset */
 }
 
@@ -49,7 +51,7 @@ i{
     align-items: center;  /* alinha os itens */
     width: 100%;
     padding:0.5rem 1rem ;
-    z-index: 0;
+    z-index: 2;
 }
 /* header logo */
 .logo{  /* img */
@@ -73,6 +75,42 @@ cursor: pointer; /* aparencia do cursor(fica a mãozinha quando passa o mouse no
 display: flex;
 align-items: center;
 background: var(--primary-bg);
-gap: 1rem; /* aqui separa os textos do menu */
+gap: 2rem; /* aqui separa os textos do menu */
 
+}
+
+.menu-item{
+    width: 100%;
+}
+
+.header-nav{
+    display: none;
+}
+
+/* menu mobile */
+.menu-mobile{
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    justify-content: space-between;
+    border-top: 1px solid #ff0000;
+}
+.menu-mobile .menu-link{
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+}
+
+/* reponsividade para o cell */
+@media (min-widht: 768px){
+#header{
+    position: fixed;
+    padding: 1rem 6rem;
+}
+.nav-mobile{
+    display: none;
+}
+.header-nav{
+    display: flex;
+}
 }
