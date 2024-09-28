@@ -31,6 +31,9 @@ body {
 i{
     color: var(--icon-color);
 }
+b{
+    font-weight: 400;
+}
 /* Reset CSS */
 *{
     margin: 0;
