@@ -9,6 +9,8 @@
     --icone-tema: #d7b21e;
     --cor-titulo: #169adc;
     --cor-texto: black;
+    --titulo-accordion: #e8e8e8;
+    --body-accordion:#1d1d1d;
 }
 
 
@@ -16,6 +18,8 @@
     --primary-color: #1d1d1d;
     --primary-bg: #ebebeb;
     --hover-menu: #898989;
+    --titulo-accordion:#161616;
+    --body-accordion:#ececec;
 
 }
 
@@ -85,7 +89,7 @@ p {
     /* img */
     width: 7rem;
     /* comprimento */
-    height: 6rem;
+    height: 4rem;
     /* altura  */
 }
 
@@ -175,7 +179,13 @@ p {
 }
 
 .menu-social {
-    gap: 2rem;
+    gap: 1rem;
+    margin-bottom: -3%;
+
+    
+
+    
+    
 }
 
 .menu-social .menu-insta {
@@ -234,7 +244,7 @@ p {
 
 .btn span,
 .btn i {
-    font-size: 1rem;
+    font-size:.8rem;
     text-transform: uppercase;
 }
 
@@ -243,7 +253,12 @@ p {
 }
 
 .btn-primary {
-    border: 1px solid var(--icon-color);
+    border: 3px solid var(--icon-color);
+    width: 12rem;
+    height: 3rem;
+
+    
+    
 }
 
 /* main */
@@ -254,13 +269,18 @@ p {
 }
 
 .main-content {
-    display: flex;
+    display: flex; /* A propriedade display: flex no CSS transforma um contêiner em um layout flexível, permitindo que seus itens sejam alinhados e distribuídos facilmente em linha ou coluna, adaptando-se ao espaço disponível. */
     flex-direction: column;
     gap: .5rem;
-    width: 10rem;
-    height: 7rem;
-    
-    
+    width: 100%;
+margin-bottom: 9px;
+    font-size: 50px;
+}
+
+#home main-content h1{
+    font-family: "Ranchers", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .video iframe {
@@ -415,6 +435,35 @@ Responsivo
     border-radius: 50rem;
     border: 8px solid var(--primary-color) ;
 }
+.sobre-conteudo1,
+.sobre-conteudo2{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
+    
+}
+
+.sobre-descricao{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+.sobre-icones{
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.sobre-icones i{
+    font-size: 1.25rem;
+    color: #169adc;
+}
+
+
 
 /* responsividade aqui */
 @media (min-width: 768px) {
@@ -458,7 +507,7 @@ Responsivo
 
 /* fim do 768px */
 
-@media (min-width: 992px) {
+@media (min-width: 992px) { /* aqui é telas a partir de 992px até o limite */
     .projeto-card {
         flex-direction: row;
     }
@@ -472,7 +521,67 @@ Responsivo
     .card-cover {
         width: 55%;
     }
+    .sobre{
+        gap:5rem;
+    }
+    
+    .sobre-conteudo1,
+    .sobre-conteudo2{
+    display: grid;
+    grid-template-columns: 40% /* lado esquerdo é 40% */  60% /* lado direito é 60% */;
+    }
+
+.sobre-conteudo2 .col1,
+.sobre-conteudo2 .col2{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 2rem;
 }
+
+.sobre-conteudo2 .col1 .row1,
+.sobre-conteudo2 .col1 .row2{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.accordion-header{
+    width: 100%;
+    display: flex;
+    padding: 0.75rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--primary-color);
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+}
+
+.accordion-header span { /* é span, pois os extos dentro da caixa estão como span */
+    color: var(--titulo-accordion);
+}
+
+.accordion-body{
+    display: none;
+    padding: 1.25rem; /* é uma margem interna entre uma caixa */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .625rem;
+    border: 1px solid var(--primary-color);
+}
+
+.accordion-item.active .accordion-header{
+    background:  var(--body-accordion);
+}
+
+.accordion-item.active .accordion-body{
+    display: flex;
+}
+   
+}
+
 
 /* fim 992px */
 
@@ -532,3 +641,4 @@ Responsivo
         padding: 10rem 15rem 4rem;
     }
 }
+
